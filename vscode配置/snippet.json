@@ -1,0 +1,31 @@
+{
+	"Empty C++ Program": {
+		"prefix": "code",
+		"body": [
+			"#include<bits/stdc++.h>",
+			"#define ll long long",
+			"",
+			"using namespace std;",
+			"",
+			"void solve() {",
+			"\t$0",
+			"}",
+			"",
+			"int main() {",
+			"\tios::sync_with_stdio(false);",
+			"\tcin.tie(0), cout.tie(0);",
+			"",
+			"\t// freopen(\"xxx.in\", \"r\", stdin);",
+			"\t// freopen(\"xxx.out\", \"w\", stdout);",
+			"",
+			"\tint T = 1; // cin >> T;",
+			"\twhile(T--) {",
+			"\t\tsolve();",
+			"\t}",
+			"",
+			"\treturn 0;",
+			"}"
+		],
+		"description": "插入一个空的C++程序模板，包含常用头文件和主函数结构"
+	}
+}
