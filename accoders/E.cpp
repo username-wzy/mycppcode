@@ -3,8 +3,8 @@
 
 using namespace std;
 
-int g[105][2], idx;
-bool cnt[105];
+int g[100005][2], idx;
+bool cnt[100005];
 
 bool insert(string &s) {
     int u = 0;
