@@ -20,14 +20,18 @@ bool insert(string &s) {
 
 void solve() {
     int T = 1;
-    bool flag = false;
+    bool flag = true;
     string s;
     while (cin >> s) {
         if (s == "9") {
             if (flag) printf("Set %d is immediately decodable\n", T);
             else printf("Set %d is not immediately decodable\n", T);
+            memset(g, 0, sizeof(g));
+            memset(cnt, 0, sizeof(cnt));
+            T++;
+            flag = true;
         } else {
-            if (b && insert(s)) b = 0;
+            if (flag && insert(s)) flag = 0;
         }
     }
 }
