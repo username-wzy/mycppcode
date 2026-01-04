@@ -20,14 +20,12 @@ bool dfs(int u) {
 }
 
 void solve() {
-    int n, k; // 9分救一下
+    int n, k;
     cin >> n >> k;
-    for (int i = 1; i <= n; i++) {
+    for (int i = 1; i <= k; i++) {
         int x, y;
         cin >> x >> y;
-        y += n;
         g[x].push_back(y);
-        g[y].push_back(x);
     }
     int cnt = 0;
     for (int i = 1; i <= n; i++) {
