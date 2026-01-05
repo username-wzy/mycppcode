@@ -3,8 +3,7 @@
 *.obj
 *.exe
 *.out
-ile:   U583137.cpp
-	new file:
+
 # 临时文件
 *.log
 *.tmp
