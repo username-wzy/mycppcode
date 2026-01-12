@@ -1,16 +1,17 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 #define ll long long
 
 using namespace std;
 
-void solve() {
+void solve()
+{
     double x, y = 0;
     cin >> x;
     cout << fixed << setprecision(1);
     if (x >= 401) {
         y += (x - 400) * 0.5663;
         x = 400;
-    } 
+    }
     if (x >= 151) {
         y += (x - 150) * 0.4663;
         x = 150;
@@ -19,7 +20,8 @@ void solve() {
     cout << y;
 }
 
-int main() {
+int main()
+{
     ios::sync_with_stdio(false);
     cin.tie(0), cout.tie(0);
 
@@ -27,7 +29,7 @@ int main() {
     // freopen("xxx.out", "w", stdout);
 
     int T = 1; // cin >> T;
-    while(T--) {
+    while (T--) {
         solve();
     }
 
