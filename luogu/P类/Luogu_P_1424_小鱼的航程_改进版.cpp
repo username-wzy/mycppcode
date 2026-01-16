@@ -1,9 +1,10 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 #define ll long long
 
 using namespace std;
 
-void solve() {
+void solve()
+{
     int x, n;
     ll sum = 0;
     cin >> x >> n;
@@ -12,13 +13,14 @@ void solve() {
             sum += 250;
         }
         x++;
-        if (x == 8) x = 1;
+        if (x == 8)
+            x = 1;
     }
     cout << sum;
-    
 }
 
-int main() {
+int main()
+{
     ios::sync_with_stdio(false);
     cin.tie(0), cout.tie(0);
 
@@ -26,7 +28,7 @@ int main() {
     // freopen("xxx.out", "w", stdout);
 
     int T = 1; // cin >> T;
-    while(T--) {
+    while (T--) {
         solve();
     }
 
