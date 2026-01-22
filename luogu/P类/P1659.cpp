@@ -38,11 +38,11 @@ vector<int> manacher(const string& s)
         }
 
         int l = i - (1 + p[i]), r = i + (1 + p[i]);
-        while (l >= 0 && r < n && t[l] == t [r]) {
+        while (l >= 0 && r < n && t[l] == t[r]) {
             p[i]++;
             l--, r++;
         }
-  
+
         if (i + p[i] > R) {
             M = i, R = i + p[i];
         }
