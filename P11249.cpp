@@ -1,65 +1,70 @@
 #include <bits/stdc++.h>
-#define ll long long
-
 using namespace std;
 
-constexpr int N = 1e5 + 5;
-
+const int N = 1e5 + 5;
 vector<int> g[N];
-bool a[N], bxd;
-int bw_count = 0;
-
-ll dfs(int u, int fa)
-{
-    int x = a[u]; // 记录以u为根节点的子树的宝物总数，自己的宝物也算
-    int y = 0; // 记录以u的子节点为根节点的有宝物的子树个数
-    for (int v : g[u]) {
-        if (v != fa) {
-            int x = dfs(v, u); // 以v为根节点的子树的宝物总数
-            if (x >= 1) {
-                x += x;
-                y++;
-            }
-        }
-    }
-    if ((x != bw_count && y > 1) || y > 2) { // 有宝物的子树个数>2时必然走完两个子树，第三，四...个子树就走不了
-        bxd = 1;
-    }
-    return x;
-}
+int in[N];
+bool a[N], lj[N];
 
 void solve()
 {
     int n;
     cin >> n;
-    for (int i = 1; i <= n; i++)
-        g[i].clear();
+
     for (int i = 1; i <= n; i++) {
+        g[i].clear();   
+        lj[i] = true;
         cin >> a[i];
-        bw_count += a[i];
+        in[i] = 0;
     }
+
     for (int i = 1; i < n; i++) {
         int u, v;
         cin >> u >> v;
         g[u].push_back(v);
         g[v].push_back(u);
+        in[u]++, in[v]++;
     }
-    dfs(1, -1);
-    if (!bxd)
-        cout << "Yes\n";
-    else
-        cout << "No\n";
+
+    queue<int> q;
+    for (int i = 1; i <= n; i++) {
+        if (!a[i] && in[i] == 1)
+            q.push(i);
+    }
+
+    // 剪枝
+    while (!q.empty()) {
+        int u = q.front();
+        q.pop();
+        lj[u] = false;
+        for (int v : g[u]) {
+            if (!lj[v])
+                continue;
+            in[v]--;
+            if (!a[v] && in[v] == 1)
+                q.push(v);
+        }
+    }
+
+    // 统计叶子
+    int leaf = 0;
+    for (int i = 1; i <= n; i++) {
+        if (lj[i] && in[i] == 1)
+            leaf++;
+    }
+
+    cout << (leaf <= 2 ? "Yes\n" : "No\n");
 }
 
 int main()
 {
     ios::sync_with_stdio(false);
-    cin.tie(0), cout.tie(0);
+    cin.tie(nullptr);
 
-    int T = 1;
+    int T;
     cin >> T;
     while (T--)
         solve();
 
     return 0;
-}   
+}
