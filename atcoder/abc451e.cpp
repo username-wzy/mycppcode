@@ -7,7 +7,10 @@ struct edge {
     int u, v, w;
 };
 
-int fa[200005];
+int fa[3005];
+vector<pair<int, int>> g[3005];
+int graph[3005][3005];
+int vis[3005], dist[3005];
 
 int find(int x)
 {
@@ -27,20 +30,36 @@ bool unite(int x, int y)
     return false;
 }
 
+void dfs(int u, int cnt)
+{
+    vis[u] = 1;
+    dist[u] = cnt;
+    for (auto [v, w] : g[u]) {
+        if (!vis[v]) {
+            dfs(v, cnt + w);
+        }
+    }
+}
+
 int main()
 {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
 
-    int n, m;
-    cin >> n >> m;
+    int n;
+    cin >> n;
 
-    vector<edge> edges(m);
-    for (int idx = 0; idx < m; ++idx) {
-        cin >> edges[idx].u >> edges[idx].v >> edges[idx].w;
+    vector<edge> E;
+
+    for (int i = 1; i <= n; i++) {
+        for (int j = i + 1; j <= n; j++) {
+            int w;
+            cin >> w;
+            graph[i][j] = graph[j][i] = w;
+            E.push_back({ i, j, w });
+        }
     }
-
-    sort(edges.begin(), edges.end(), [](edge& a, edge& b) {
+    sort(E.begin(), E.end(), [](edge& a, edge& b) {
         return a.w < b.w;
     });
 
@@ -51,9 +70,11 @@ int main()
     ll mst_w = 0; // 生成树权重
     int edges_cnt = 0; // 生成树边数
 
-    for (auto e : edges) {
-        if (unite(e.u, e.v)) {
-            mst_w += e.w; // 加入边 e 后，生成树权重增加 e.w
+    for (auto [u, v, w] : E) {
+        if (unite(u, v)) {
+            g[u].push_back({ v, w });
+            g[v].push_back({ u, w });
+            mst_w += w; // 加入边 e 后，生成树权重增加 e.w
             edges_cnt++; // 生成树边数增加 1
             if (edges_cnt == n - 1) // 生成树边数为节点数减一，说明生成树已形成
                 break;
@@ -61,9 +82,22 @@ int main()
     }
 
     if (edges_cnt == n - 1) {
-        cout << mst_w << endl;
+        for (int i = 1; i <= n; i++) {
+            memset(vis, 0, sizeof vis);
+            memset(dist, 0, sizeof dist);
+            dfs(i, 0);
+            for (int j = 1; j <= n; j++) {
+                if (j == i)
+                    continue;
+                if (dist[j] != graph[i][j]) {
+                    cout << "No";
+                    return 0;
+                }
+            }
+        }
+        cout << "Yes";
     } else {
-        cout << "Disconnected" << endl;
+        cout << "No";
     }
 
     return 0;
