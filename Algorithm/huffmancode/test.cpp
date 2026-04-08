@@ -3,7 +3,7 @@
 using namespace std;
 
 void HuffmanCode :: wzy() {
-    cout << "yusiwen is a good man" << '\n';
+    cout << "NGTWW67ZMKD7VDUM" << '\n';
 }
 
 int main() {
