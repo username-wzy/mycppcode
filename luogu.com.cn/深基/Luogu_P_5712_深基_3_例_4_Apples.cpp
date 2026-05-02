@@ -1,18 +1,21 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 #define ll long long
 
 using namespace std;
 
-void solve() {
+void solve()
+{
     int x;
     cin >> x;
     cout << "Today, I ate ";
     if (x > 1) {
         cout << x << " apples.";
-    } else cout << x << " apple.";
+    } else
+        cout << x << " apple.";
 }
 
-int main() {
+int main()
+{
     ios::sync_with_stdio(false);
     cin.tie(0), cout.tie(0);
 
@@ -20,7 +23,7 @@ int main() {
     // freopen("xxx.out", "w", stdout);
 
     int T = 1; // cin >> T;
-    while(T--) {
+    while (T--) {
         solve();
     }
 

@@ -1,4 +1,4 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 #define ll long long
 
 using namespace std;
@@ -6,16 +6,20 @@ using namespace std;
 vector<int> w, g[100005];
 int vis[100005];
 
-int dfs(int u) {
-    if (vis[u]) return vis[u];
+int dfs(int u)
+{
+    if (vis[u])
+        return vis[u];
     int cnt = 0;
     for (auto v : g[u]) {
-        if (w[v] < w[u]) cnt += dfs(v);
+        if (w[v] < w[u])
+            cnt += dfs(v);
     }
     return vis[u] = cnt + 1;
 }
 
-void solve() {
+void solve()
+{
     int n;
     cin >> n;
     w.resize(n + 1);
@@ -35,7 +39,8 @@ void solve() {
     cout << mx << '\n';
 }
 
-int main() {
+int main()
+{
     ios::sync_with_stdio(false);
     cin.tie(0), cout.tie(0);
 
@@ -43,7 +48,7 @@ int main() {
     // freopen("xxx.out", "w", stdout);
 
     int T = 1; // cin >> T;
-    while(T--) {
+    while (T--) {
         solve();
     }
 

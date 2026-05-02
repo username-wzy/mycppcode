@@ -83,7 +83,7 @@ int main()
     int ans = 1e9;
     const int path_len = path.size();
     for (int i = 0; i < path_len; i++) { // 双指针枚举路径上的起点 i 和终点 j
-        for (int j = i; j < path_len; j++) {    
+        for (int j = i; j < path_len; j++) {
             if (dp[path[i]][path[j]] <= s) { // 过滤：判断当前选取的路径长度是否 <= s
                 int ecc = 0;
                 for (int k = 1; k <= n; k++) { // 枚举树上所有的点 k，计算它们到路径 F 的距离，求最大的那个（这就是偏心距）

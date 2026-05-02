@@ -46,7 +46,7 @@ int main()
             else
                 cout << ans[i];
         }
-        
+
     else
         for (int i = cnt + 1; i >= 1; i--) {
             if (i == cnt + 1 && ans[i] == 0)

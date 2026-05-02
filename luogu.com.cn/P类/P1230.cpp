@@ -1,19 +1,22 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 #define ll long long
 
 using namespace std;
 
 struct node {
     int t, w;
-    bool operator< (const node other) const {
-        if (t != other.t) return t < other.t;
+    bool operator<(const node other) const
+    {
+        if (t != other.t)
+            return t < other.t;
         return w > other.w;
     }
 };
 
 node a[505];
 
-void solve() {
+void solve()
+{
     int m, n, sum = 0;
     cin >> m >> n;
     priority_queue<int, vector<int>, greater<int>> q;
@@ -43,7 +46,8 @@ void solve() {
     cout << m - (sum - sum2);
 }
 
-int main() {
+int main()
+{
     ios::sync_with_stdio(false);
     cin.tie(0), cout.tie(0);
 
@@ -51,7 +55,7 @@ int main() {
     // freopen("xxx.out", "w", stdout);
 
     int T = 1; // cin >> T;
-    while(T--) {
+    while (T--) {
         solve();
     }
 

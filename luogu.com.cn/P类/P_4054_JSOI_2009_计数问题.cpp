@@ -1,12 +1,13 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 #define ll long long
-#define lowbit(x) (x&(-x))
+#define lowbit(x) (x & (-x))
 
 using namespace std;
 
 int a[305][305][105], n, m, color[305][305];
 
-void add(int x, int y, int c, int d) {
+void add(int x, int y, int c, int d)
+{
     for (int i = x; i <= n; i += lowbit(i)) {
         for (int j = y; j <= m; j += lowbit(j)) {
             a[i][j][c] += d;
@@ -14,27 +15,32 @@ void add(int x, int y, int c, int d) {
     }
 }
 
-int sum(int x, int y, int c) {
+int sum(int x, int y, int c)
+{
     int cnt = 0;
     for (int i = x; i > 0; i -= lowbit(i)) {
-        for (int j = y; j > 0; j-= lowbit(j)) {
-            cnt += a[i][j][ c];
+        for (int j = y; j > 0; j -= lowbit(j)) {
+            cnt += a[i][j][c];
         }
     }
     return cnt;
 }
 
-void solve() {
+void solve()
+{
     cin >> n >> m;
-    for (int i = 1; i <= n; i++) for (int j = 1; j <= m; j++) {
-        int c; cin >> c;
-        color[i][j] = c;
-        add(i, j, c, 1);
-    }
+    for (int i = 1; i <= n; i++)
+        for (int j = 1; j <= m; j++) {
+            int c;
+            cin >> c;
+            color[i][j] = c;
+            add(i, j, c, 1);
+        }
     int q;
     cin >> q;
     while (q--) {
-        int op; cin >> op;
+        int op;
+        cin >> op;
         if (op == 1) {
             int x, y, c;
             cin >> x >> y >> c;
@@ -49,7 +55,8 @@ void solve() {
     }
 }
 
-int main() {
+int main()
+{
     ios::sync_with_stdio(false);
     cin.tie(0), cout.tie(0);
 
@@ -57,7 +64,7 @@ int main() {
     // freopen("xxx.out", "w", stdout);
 
     int T = 1; // cin >> T;
-    while(T--) {
+    while (T--) {
         solve();
     }
 

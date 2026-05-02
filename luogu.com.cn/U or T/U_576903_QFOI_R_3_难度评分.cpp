@@ -1,9 +1,10 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 #define ll long long
 
 using namespace std;
 
-void solve() {
+void solve()
+{
     int n, m;
     cin >> n >> m;
     vector<int> a(n + 1, 0);
@@ -18,10 +19,12 @@ void solve() {
             a[p] = d;
         }
     }
-    for (int i = 1; i <= n; i++) cout << a[i] << " ";
+    for (int i = 1; i <= n; i++)
+        cout << a[i] << " ";
 }
 
-int main() {
+int main()
+{
     ios::sync_with_stdio(false);
     cin.tie(0), cout.tie(0);
 
@@ -29,7 +32,7 @@ int main() {
     // freopen("xxx.out", "w", stdout);
 
     int T = 1; // cin >> T;
-    while(T--) {
+    while (T--) {
         solve();
     }
 

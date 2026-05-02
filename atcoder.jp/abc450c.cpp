@@ -7,8 +7,8 @@ const int N = 1e3 + 5;
 
 char mp[N][N];
 bool vis[N][N];
-int dx[4] = {0, 1, 0, -1};
-int dy[4] = {1, 0, -1, 0};
+int dx[4] = { 0, 1, 0, -1 };
+int dy[4] = { 1, 0, -1, 0 };
 int n, m;
 
 void dfs(int i, int j)
@@ -56,15 +56,15 @@ int main()
             dfs(i, m);
         }
     }
-        for (int i = 2; i < n; i++) {
-            for (int j = 2; j < m; j++) {
-                if (mp[i][j] == '.' && !vis[i][j]) {
-                    vis[i][j] = true;
-                    dfs(i, j);
-                    cnt++;
-                }
+    for (int i = 2; i < n; i++) {
+        for (int j = 2; j < m; j++) {
+            if (mp[i][j] == '.' && !vis[i][j]) {
+                vis[i][j] = true;
+                dfs(i, j);
+                cnt++;
             }
         }
+    }
     cout << cnt << '\n';
     return 0;
 }

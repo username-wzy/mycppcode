@@ -1,4 +1,4 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 #define ll long long
 
 using namespace std;
@@ -7,7 +7,8 @@ bool color[100005];
 vector<int> g[100005];
 int maxn = 0;
 
-void dfs(int x, int step, int f) {
+void dfs(int x, int step, int f)
+{
     maxn = max(maxn, step);
     for (auto p : g[x]) {
         if (color[p] != color[x] && f != p) {
@@ -18,7 +19,8 @@ void dfs(int x, int step, int f) {
     }
 }
 
-void solve() {
+void solve()
+{
     int n;
     cin >> n;
     for (int i = 1; i <= n; i++) {
@@ -30,12 +32,13 @@ void solve() {
         g[u].push_back(v);
         g[v].push_back(u);
     }
-    for (int i = 1; i <= n; i++) dfs(i, 1, -1);
+    for (int i = 1; i <= n; i++)
+        dfs(i, 1, -1);
     cout << maxn;
 }
 
-
-int main() {
+int main()
+{
     ios::sync_with_stdio(false);
     cin.tie(0), cout.tie(0);
 
@@ -43,7 +46,7 @@ int main() {
     // freopen("xxx.out", "w", stdout);
 
     int T = 1; // cin >> T;
-    while(T--) {
+    while (T--) {
         solve();
     }
 

@@ -1,11 +1,12 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 #define ll long long
 
 using namespace std;
 
 char a[10][10];
 
-void solve() {
+void solve()
+{
     for (int i = 1; i <= 4; i++) {
         for (int j = 1; j <= 4; j++) {
             cin >> a[i][j];
@@ -13,13 +14,14 @@ void solve() {
     }
     for (int i = 1; i <= 4; i++) {
         for (int j = 1; j <= 4; j++) {
-            cout <<  a[i][j];
+            cout << a[i][j];
         }
-        cout << '\n';   
+        cout << '\n';
     }
 }
 
-int main() {
+int main()
+{
     ios::sync_with_stdio(false);
     cin.tie(0), cout.tie(0);
 
@@ -27,7 +29,7 @@ int main() {
     // freopen("xxx.out", "w", stdout);
 
     int T = 1; // cin >> T;
-    while(T--) {
+    while (T--) {
         solve();
     }
 

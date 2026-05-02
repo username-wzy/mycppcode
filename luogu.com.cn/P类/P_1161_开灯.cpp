@@ -1,9 +1,10 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 #define ll long long
 
 using namespace std;
 
-void solve() {
+void solve()
+{
     int n;
     cin >> n;
     unordered_map<int, int> mp;
@@ -16,11 +17,13 @@ void solve() {
         }
     }
     for (auto p : mp) {
-        if (p.second % 2) cout << p.first; 
+        if (p.second % 2)
+            cout << p.first;
     }
 }
 
-int main() {
+int main()
+{
     ios::sync_with_stdio(false);
     cin.tie(0), cout.tie(0);
 
@@ -28,7 +31,7 @@ int main() {
     // freopen("xxx.out", "w", stdout);
 
     int T = 1; // cin >> T;
-    while(T--) {
+    while (T--) {
         solve();
     }
 

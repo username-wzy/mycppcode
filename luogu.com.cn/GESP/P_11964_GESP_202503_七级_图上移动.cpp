@@ -1,4 +1,4 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 #define ll long long
 
 using namespace std;
@@ -9,16 +9,20 @@ bool vis[505][25];
 
 int n, m, k;
 
-void dfs(int u, int step) {
-    if (step > k) return ;
-    if (vis[u][step]) return ;
+void dfs(int u, int step)
+{
+    if (step > k)
+        return;
+    if (vis[u][step])
+        return;
     vis[u][step] = 1;
     for (auto v : g[u]) {
         dfs(v, step + 1);
     }
 }
 
-void solve() {
+void solve()
+{
     cin >> n >> m >> k;
     for (int i = 1; i <= m; i++) {
         int u, v;
@@ -40,7 +44,8 @@ void solve() {
     }
 }
 
-int main() {
+int main()
+{
     ios::sync_with_stdio(false);
     cin.tie(0), cout.tie(0);
 
@@ -48,7 +53,8 @@ int main() {
     // freopen("xxx.out", "w", stdout);
 
     int T = 1; // cin >> T;
-    while(T--) {c
+    while (T--) {
+        c
         solve();
     }
 

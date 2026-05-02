@@ -1,13 +1,17 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 #define int long long
 
 using namespace std;
 
-void solve() {
+void solve()
+{
     int n, m, maxn = 0;
     cin >> n >> m;
     vector<int> a(m + 10), dp(n + 10), b(n + 10);
-    for (int i = 1; i <= m; i++) {cin >> a[i];maxn = max(maxn, a[i]);}
+    for (int i = 1; i <= m; i++) {
+        cin >> a[i];
+        maxn = max(maxn, a[i]);
+    }
     for (int i = 1; i <= n; i++) {
         cin >> b[i];
     }
@@ -30,7 +34,8 @@ void solve() {
     cout << ans;
 }
 
-signed main() {
+signed main()
+{
     ios::sync_with_stdio(false);
     cin.tie(0), cout.tie(0);
 
@@ -38,7 +43,7 @@ signed main() {
     // freopen("xxx.out", "w", stdout);
 
     int T = 1; // cin >> T;
-    while(T--) {
+    while (T--) {
         solve();
     }
 

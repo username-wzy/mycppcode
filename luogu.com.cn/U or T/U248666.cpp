@@ -8,7 +8,8 @@ struct Interval {
     int a, b;
 } intervals[N];
 
-bool cmp(Interval a, Interval b) {
+bool cmp(Interval a, Interval b)
+{
     return a.b < b.b;
 }
 

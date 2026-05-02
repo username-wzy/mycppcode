@@ -1,9 +1,10 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 #define ll long long
 
 using namespace std;
 
-void solve() {
+void solve()
+{
     int a, b, c;
     cin >> a >> b >> c;
     map<int, int> mp;
@@ -15,7 +16,7 @@ void solve() {
                 // }
             }
         }
-    } 
+    }
     int mx = 0, ans = 0;
     for (auto p : mp) {
         if (p.second > mx) {
@@ -26,7 +27,8 @@ void solve() {
     cout << ans;
 }
 
-int main() {
+int main()
+{
     ios::sync_with_stdio(false);
     cin.tie(0), cout.tie(0);
 
@@ -34,7 +36,7 @@ int main() {
     // freopen("xxx.out", "w", stdout);
 
     int T = 1; // cin >> T;
-    while(T--) {
+    while (T--) {
         solve();
     }
 

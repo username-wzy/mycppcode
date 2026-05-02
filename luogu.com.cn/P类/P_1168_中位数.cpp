@@ -1,4 +1,4 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 #define ll long long
 
 using namespace std;
@@ -10,16 +10,18 @@ int n;
 set<int> st;
 unordered_map<int, int> mp, tong;
 
-int lowbit(int x) {return x & -x;}
+int lowbit(int x) { return x & -x; }
 
-void add(int x) {
+void add(int x)
+{
     while (x <= n) {
         bit[x]++;
-        x += lowbit(x);     
+        x += lowbit(x);
     }
 }
 
-int sum(int x) {
+int sum(int x)
+{
     ll t = 0;
     while (x > 0) {
         t += bit[x];
@@ -28,7 +30,8 @@ int sum(int x) {
     return t;
 }
 
-int f(int x) {
+int f(int x)
+{
     int l = 1, r = n, ans = 0;
     while (l <= r) {
         int mid = (l + r) >> 1;
@@ -43,7 +46,8 @@ int f(int x) {
     return ans;
 }
 
-void solve() {
+void solve()
+{
     cin >> n;
     for (int i = 1; i <= n; i++) {
         cin >> a[i];
@@ -63,7 +67,8 @@ void solve() {
     }
 }
 
-int main() {
+int main()
+{
     ios::sync_with_stdio(false);
     cin.tie(0), cout.tie(0);
 
@@ -71,7 +76,7 @@ int main() {
     // freopen("xxx.out", "w", stdout);
 
     int T = 1; // cin >> T;
-    while(T--) {
+    while (T--) {
         solve();
     }
 

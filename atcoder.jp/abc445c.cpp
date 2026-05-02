@@ -14,7 +14,7 @@ int main()
         cin >> a[i];
     for (int i = n; i >= 1; i--) {
         if (a[i] == i)
-            f[i] = i;   
+            f[i] = i;
         else
             f[i] = f[a[i]];
     }

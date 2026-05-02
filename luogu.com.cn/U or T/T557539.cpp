@@ -45,5 +45,5 @@ int main()
         bestB = min(bestB, B);
     }
 
-    cout <<ans << "\n";
+    cout << ans << "\n";
 }

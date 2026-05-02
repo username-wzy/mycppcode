@@ -22,7 +22,7 @@ int main()
         const ll sum = accumulate(a.begin() + 1, a.end(), 0LL);
         auto mutipies_of_D = [&](int d) -> bool {
             for (auto i : mp) {
-                if (i.second % d!= 0)
+                if (i.second % d != 0)
                     return 0;
             }
             return 1;
@@ -31,7 +31,7 @@ int main()
         for (int k = 1; k <= m; k++) {
             int g = __gcd(n, k);
             int d = n / g;
-            if (sum % d == 0 && mutipies_of_D(d)) 
+            if (sum % d == 0 && mutipies_of_D(d))
                 cnt++;
         }
         cout << cnt << '\n';

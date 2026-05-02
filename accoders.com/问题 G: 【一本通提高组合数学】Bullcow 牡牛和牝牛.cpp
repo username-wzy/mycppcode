@@ -34,9 +34,8 @@ ll qpow(ll a, ll b, ll p)
     return res;
 }
 
-
-
-ll C(ll n, ll m) {
+ll C(ll n, ll m)
+{
     if (m > n)
         return 0;
     if (n - m < m)

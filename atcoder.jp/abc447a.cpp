@@ -12,7 +12,7 @@ int main()
     cin >> n >> m;
     if (n % 2 == 0)
         cout << (n / 2 >= m ? "Yes" : "No") << '\n';
-    else 
+    else
         cout << (n / 2 + 1 >= m ? "Yes" : "No") << '\n';
 
     return 0;

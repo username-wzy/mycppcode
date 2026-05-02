@@ -12,7 +12,7 @@ void solve()
     cin >> n;
 
     for (int i = 1; i <= n; i++) {
-        g[i].clear();   
+        g[i].clear();
         lj[i] = true;
         cin >> a[i];
         in[i] = 0;

@@ -1,17 +1,18 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 #define ll long long
 
 using namespace std;
 
 struct cow {
     ll t, d;
-    bool operator< (const cow other) const {
+    bool operator<(const cow other) const
+    {
         return t * other.d < other.t * d;
     }
-}cows[100005];
+} cows[100005];
 
-
-void solve() {
+void solve()
+{
     ll n;
     cin >> n;
     for (int i = 1; i <= n; i++) {
@@ -26,7 +27,8 @@ void solve() {
     cout << sum;
 }
 
-int main() {
+int main()
+{
     ios::sync_with_stdio(false);
     cin.tie(0), cout.tie(0);
 
@@ -34,7 +36,7 @@ int main() {
     // freopen("xxx.out", "w", stdout);
 
     int T = 1; // cin >> T;
-    while(T--) {
+    while (T--) {
         solve();
     }
 

@@ -19,7 +19,6 @@ int find(int x)
     return fa[x] == x ? x : fa[x] = find(fa[x]);
 }
 
-
 int dfs(int u, int fa)
 {
     int dist = 0, d1 = 0, d2 = 0; // dist: 当前节点到子树的最长距离，d1: 当前节点到子树的最长距离，d2: 当前节点到子树的次长距离
@@ -30,10 +29,9 @@ int dfs(int u, int fa)
         dist = max(dist, d);
         if (d > d1) { // 更新最长距离和次长距离
             d2 = d1; // 更新次长距离
-            d1 = d;  // 更新最长距离
-        }
-        else if (d > d2)
-            d2 = d;  // 更新最长距离
+            d1 = d; // 更新最长距离
+        } else if (d > d2)
+            d2 = d; // 更新最长距离
     }
     tot = max(tot, d1 + d2);
     return dist;

@@ -16,7 +16,7 @@ int main()
 
     // st tabel
     int n, q;
-    cin >> n >> q;      
+    cin >> n >> q;
     for (int i = 1; i <= n; i++) {
         cin >> stmax[i][0];
         stmin[i][0] = stmax[i][0];
@@ -30,7 +30,7 @@ int main()
         for (int i = 1; i + (1 << k) - 1 <= n; i++) {
             stmax[i][k] = max(stmax[i][k - 1], stmax[i + (1 << (k - 1))][k - 1]);
             stmin[i][k] = min(stmin[i][k - 1], stmin[i + (1 << (k - 1))][k - 1]);
-        }   
+        }
     }
 
     while (q--) {

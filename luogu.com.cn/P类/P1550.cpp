@@ -1,11 +1,12 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 #define ll long long
 
 using namespace std;
 
 struct node {
     int u, v, w;
-    bool operator< (const node other) const {
+    bool operator<(const node other) const
+    {
         return w < other.w;
     }
 };
@@ -14,25 +15,29 @@ vector<node> g;
 
 int fa[305];
 
-int find(int x) {
-    if (fa[x] == x) return x;
-    else return fa[x] = find(fa[x]);
+int find(int x)
+{
+    if (fa[x] == x)
+        return x;
+    else
+        return fa[x] = find(fa[x]);
 }
 
-void solve() {
+void solve()
+{
     int n;
     cin >> n;
     for (int i = 1; i <= n; i++) {
         int w;
         cin >> w;
-        g.push_back({0, i, w});
+        g.push_back({ 0, i, w });
     }
-    for (int i = 1 ; i <= n; i++) {
+    for (int i = 1; i <= n; i++) {
         for (int j = 1; j <= n; j++) {
             int w;
             cin >> w;
             if (i != j) {
-                g.push_back({i, j, w});
+                g.push_back({ i, j, w });
             }
         }
     }
@@ -56,7 +61,8 @@ void solve() {
     cout << sum;
 }
 
-int main() {
+int main()
+{
     ios::sync_with_stdio(false);
     cin.tie(0), cout.tie(0);
 
@@ -64,7 +70,7 @@ int main() {
     // freopen("xxx.out", "w", stdout);
 
     int T = 1; // cin >> T;
-    while(T--) {
+    while (T--) {
         solve();
     }
 

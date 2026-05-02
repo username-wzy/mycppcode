@@ -1,9 +1,10 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 #define ll long long
 
 using namespace std;
 
-void solve() {
+void solve()
+{
     string isbn;
     cin >> isbn;
     int sum = 0, k = 1;
@@ -20,13 +21,14 @@ void solve() {
             isbn[isbn.size() - 1] = 'X';
             cout << isbn;
         } else {
-            isbn[isbn.size() - 1] = sum  + '0';
+            isbn[isbn.size() - 1] = sum + '0';
             cout << isbn;
         }
     }
 }
 
-int main() {
+int main()
+{
     ios::sync_with_stdio(false);
     cin.tie(0), cout.tie(0);
 
@@ -34,7 +36,7 @@ int main() {
     // freopen("xxx.out", "w", stdout);
 
     int T = 1; // cin >> T;
-    while(T--) {
+    while (T--) {
         solve();
     }
 

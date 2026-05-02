@@ -1,4 +1,4 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 #define ll long long
 
 using namespace std;
@@ -6,7 +6,8 @@ using namespace std;
 bool a[1005][1005];
 int n;
 
-void solve() {
+void solve()
+{
     int m;
     cin >> n >> m;
     for (int i = 1; i <= n; i++) {
@@ -22,7 +23,8 @@ void solve() {
     cout << cnt1 << " " << cnt2 << " " << cnt1 + cnt2 << "\n";
 }
 
-int main() {
+int main()
+{
     ios::sync_with_stdio(false);
     cin.tie(0), cout.tie(0);
 
@@ -30,7 +32,7 @@ int main() {
     // freopen("xxx.out", "w", stdout);
 
     int T = 1; // cin >> T;
-    while(T--) {
+    while (T--) {
         solve();
     }
 

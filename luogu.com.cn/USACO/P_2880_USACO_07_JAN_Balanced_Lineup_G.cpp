@@ -1,4 +1,4 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 #define ll long long
 
 using namespace std;
@@ -7,11 +7,13 @@ const int N = 5e4 + 5;
 
 int bit1[N], bit2[N], n, m, a[N];
 
-int lowbit(int x) {
+int lowbit(int x)
+{
     return x & -x;
 }
 
-void add(int x, int d) {
+void add(int x, int d)
+{
     while (x <= n) {
         bit1[x] = max(bit1[x], d);
         bit2[x] = min(bit2[x], d);
@@ -19,7 +21,8 @@ void add(int x, int d) {
     }
 }
 
-pair<int, int> mx(int l, int r) {
+pair<int, int> mx(int l, int r)
+{
     int res = 0, res2 = INT_MAX;
     while (l <= r) {
         if (r - lowbit(r) < l) {
@@ -32,10 +35,11 @@ pair<int, int> mx(int l, int r) {
             r -= lowbit(r);
         }
     }
-    return {res, res2};
+    return { res, res2 };
 }
 
-void solve() {
+void solve()
+{
     memset(bit2, 0x7f, sizeof(bit2));
     cin >> n >> m;
     for (int i = 1; i <= n; i++) {
@@ -50,7 +54,8 @@ void solve() {
     }
 }
 
-int main() {
+int main()
+{
     ios::sync_with_stdio(false);
     cin.tie(0), cout.tie(0);
 
@@ -58,7 +63,7 @@ int main() {
     // freopen("xxx.out", "w", stdout);
 
     int T = 1; // cin >> T;
-    while(T--) {
+    while (T--) {
         solve();
     }
 

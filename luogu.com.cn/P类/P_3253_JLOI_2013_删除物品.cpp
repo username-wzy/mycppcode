@@ -1,4 +1,4 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 #define ll long long
 #define lowbit(x) (x & -x)
 
@@ -7,13 +7,15 @@ using namespace std;
 ll t[1000005], n, m, vis[1000005];
 pair<ll, ll> a[1000005];
 
-void add(ll x, ll d) {
+void add(ll x, ll d)
+{
     for (int i = x; i <= n + m; i += lowbit(i)) {
         t[i] += d;
     }
 }
 
-ll sum(int x) {
+ll sum(int x)
+{
     ll res = 0;
     for (int i = x; i > 0; i -= lowbit(i)) {
         res += t[i];
@@ -21,7 +23,8 @@ ll sum(int x) {
     return res;
 }
 
-void solve() {
+void solve()
+{
     cin >> n >> m;
     for (int i = n; i >= 1; i--) {
         cin >> a[i].first;
@@ -38,7 +41,8 @@ void solve() {
     for (int i = 1; i <= n + m; i++) {
         if (a[i].second >= r) { // a[i].second是删掉数的下表
             ans += sum(a[i].second) - sum(r);
-            if (vis[r]) ans--;
+            if (vis[r])
+                ans--;
             add(a[i].second, -1);
             vis[a[i].second] = 1;
             r = a[i].second;
@@ -55,7 +59,8 @@ void solve() {
     cout << ans;
 }
 
-int main() {
+int main()
+{
     ios::sync_with_stdio(false);
     cin.tie(0), cout.tie(0);
 
@@ -63,7 +68,7 @@ int main() {
     // freopen("xxx.out", "w", stdout);
 
     int T = 1; // cin >> T;
-    while(T--) {
+    while (T--) {
         solve();
     }
 

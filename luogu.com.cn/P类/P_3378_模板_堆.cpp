@@ -1,9 +1,10 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 #define ll long long
 
 using namespace std;
 
-void solve() {
+void solve()
+{
     priority_queue<int, vector<int>, greater<int>> pq;
     int n;
     cin >> n;
@@ -11,7 +12,8 @@ void solve() {
         int op;
         cin >> op;
         if (op == 1) {
-            int x; cin >> x;
+            int x;
+            cin >> x;
             pq.push(x);
         } else if (op == 2) {
             cout << pq.top() << '\n';
@@ -21,7 +23,8 @@ void solve() {
     }
 }
 
-int main() {
+int main()
+{
     ios::sync_with_stdio(false);
     cin.tie(0), cout.tie(0);
 
@@ -29,7 +32,7 @@ int main() {
     // freopen("xxx.out", "w", stdout);
 
     int T = 1; // cin >> T;
-    while(T--) {
+    while (T--) {
         solve();
     }
 

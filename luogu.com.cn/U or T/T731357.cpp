@@ -18,7 +18,7 @@ int main()
             if (a[i] == 0)
                 cnt_0++;
         }
-        
+
         if (n == 1) {
             cout << (a[0] == 0 ? "Alice" : "Bob") << "\n";
         } else if (n == 2) {

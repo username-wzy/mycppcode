@@ -5,7 +5,7 @@ typedef long long ll;
 
 constexpr int N = 50005;
 constexpr int M = 100005;
-    
+
 int idx[N]; // 用来记录每个点已经处理到第几条边
 bool vis[M];
 vector<pair<int, int>> g[N];

@@ -1,4 +1,4 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 #define ll long long
 
 using namespace std;
@@ -6,12 +6,15 @@ using namespace std;
 bool a[15][15];
 int b[15];
 
-void out(__int128 x){
-	if(x > 9) out(x / 10);
-	putchar(x % 10 + '0');
+void out(__int128 x)
+{
+    if (x > 9)
+        out(x / 10);
+    putchar(x % 10 + '0');
 }
 
-void solve() {
+void solve()
+{
     string s;
     int k;
     cin >> s >> k;
@@ -34,7 +37,8 @@ void solve() {
     }
     for (int i = 0; i <= 9; i++) {
         for (int j = 0; j <= 9; j++) {
-            if (a[i][j]) b[i]++;
+            if (a[i][j])
+                b[i]++;
         }
     }
     __int128 sum = 1;
@@ -44,7 +48,8 @@ void solve() {
     out(sum);
 }
 
-int main() {
+int main()
+{
     ios::sync_with_stdio(false);
     cin.tie(0), cout.tie(0);
 
@@ -52,7 +57,7 @@ int main() {
     // freopen("xxx.out", "w", stdout);
 
     int T = 1; // cin >> T;
-    while(T--) {
+    while (T--) {
         solve();
     }
 

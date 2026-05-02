@@ -1,9 +1,10 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 #define int long long
 
 using namespace std;
 
-void solve() {
+void solve()
+{
     int n, m;
     cin >> n >> m;
     vector<pair<int, int>> a(n + 1);
@@ -33,7 +34,8 @@ void solve() {
     cout << q.size();
 }
 
-signed main() {
+signed main()
+{
     ios::sync_with_stdio(false);
     cin.tie(0), cout.tie(0);
 
@@ -41,7 +43,7 @@ signed main() {
     // freopen("xxx.out", "w", stdout);
 
     int T = 1; // cin >> T;
-    while(T--) {
+    while (T--) {
         solve();
     }
 

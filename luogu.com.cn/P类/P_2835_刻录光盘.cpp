@@ -1,4 +1,4 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 #define int long long
 
 using namespace std;
@@ -6,18 +6,21 @@ using namespace std;
 bool dp[205][205];
 int a[10005];
 
-void solve() {
+void solve()
+{
     int n;
     cin >> n;
     for (int i = 1; i <= n; i++) {
         while (true) {
             int x;
             cin >> x;
-            if (x == 0) break;w
-            dp[i][x] = 1;
+            if (x == 0)
+                break;
+            w
+                dp[i][x] = 1;
         }
     }
-    for (int k = 1; k <w= n; k++) {
+    for (int k = 1; k < w = n; k++) {
         for (int i = 1; i <= n; i++) {
             for (int j = 1; j <= n; j++) {
                 if (dp[i][k] && dp[k][j]) { // i愿意给k传 && k愿意给j传 -> i愿意给j传
@@ -38,12 +41,14 @@ void solve() {
     }
     int cnt = 0;
     for (int i = 1; i <= n; i++) {
-        if (a[i] == i) cnt++;
+        if (a[i] == i)
+            cnt++;
     }
     cout << cnt;
 }
 
-signed main() {
+signed main()
+{
     ios::sync_with_stdio(false);
     cin.tie(0), cout.tie(0);
 
@@ -51,7 +56,7 @@ signed main() {
     // freopen("xxx.out", "w", stdout);
 
     int T = 1; // cin >> T;
-    while(T--) {
+    while (T--) {
         solve();
     }
 

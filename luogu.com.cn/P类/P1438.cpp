@@ -79,10 +79,10 @@ signed main()
     for (int i = 1; i <= n; ++i) {
         cin >> a[i];
     }
-    for (int i = n; i >= 1; i--){
+    for (int i = n; i >= 1; i--) {
         a[i] -= a[i - 1];
     }
-        build();
+    build();
     while (m--) {
         int op;
         cin >> op;

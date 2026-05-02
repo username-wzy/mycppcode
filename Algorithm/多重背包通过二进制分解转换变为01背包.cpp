@@ -1,13 +1,14 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 #define ll long long
 
 using namespace std;
 
 int w[10005], v[10005], dp[50005];
 
-int bitdp(int n, int W, vector<int>& w, vector<int>& v, vector<int>& s) {
-    vector<pair<int,int>> items; // (weight, value)
-    
+int bitdp(int n, int W, vector<int>& w, vector<int>& v, vector<int>& s)
+{
+    vector<pair<int, int>> items; // (weight, value)
+
     // 二进制拆分
     for (int i = 1; i <= n; ++i) {
         int cnt = s[i];
@@ -18,7 +19,7 @@ int bitdp(int n, int W, vector<int>& w, vector<int>& v, vector<int>& s) {
         if (cnt)
             items.emplace_back(cnt * w[i], cnt * v[i]);
     }
-    
+
     // 01背包求解
     vector<int> dp(W + 1, 0);
     for (auto it : items) {
@@ -29,7 +30,8 @@ int bitdp(int n, int W, vector<int>& w, vector<int>& v, vector<int>& s) {
     return dp[W];
 }
 
-void solve() {
+void solve()
+{
     // 例如 如果一个物品为v:1, w:5, s:10
     /*
         将这种物品的数量
@@ -49,7 +51,8 @@ void solve() {
     cout << bitdp(n, W, w, v, s);
 }
 
-int main() {
+int main()
+{
     ios::sync_with_stdio(false);
     cin.tie(0), cout.tie(0);
 
@@ -57,7 +60,7 @@ int main() {
     // freopen("xxx.out", "w", stdout);
 
     int T = 1; // cin >> T;
-    while(T--) {
+    while (T--) {
         solve();
     }
 

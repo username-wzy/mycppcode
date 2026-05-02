@@ -1,11 +1,12 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 
 using namespace std;
 typedef long long ll;
 
 const ll mod = 10000 + 7;
 
-ll qpow(ll a, ll b) {
+ll qpow(ll a, ll b)
+{
     a %= mod;
     ll res = 1;
     while (b) {
@@ -17,8 +18,9 @@ ll qpow(ll a, ll b) {
     return res;
 }
 
-ll C(ll n, ll k) {
-    if (n - k < k)  
+ll C(ll n, ll k)
+{
+    if (n - k < k)
         k = n - k;
     n = n % mod;
     k = k % mod;
@@ -35,7 +37,8 @@ ll C(ll n, ll k) {
     return table[n][k];
 }
 
-int main() {
+int main()
+{
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
 

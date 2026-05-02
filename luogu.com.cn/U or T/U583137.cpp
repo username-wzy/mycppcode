@@ -1,4 +1,4 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 #define ll long long
 
 using namespace std;
@@ -6,20 +6,22 @@ using namespace std;
 vector<int> g[1005];
 int match[1005], vis[1005];
 
-bool dfs(int u) {
+bool dfs(int u)
+{
     for (auto v : g[u]) {
         if (!vis[v]) {
             vis[v] = true;
             if (!match[v] || dfs(match[v])) {
                 match[v] = u;
-                return 1 ;
+                return 1;
             }
         }
     }
     return 0;
 }
 
-void solve() {
+void solve()
+{
     int n, k;
     cin >> n >> k;
     for (int i = 1; i <= k; i++) {
@@ -35,7 +37,8 @@ void solve() {
     cout << cnt;
 }
 
-int main() {
+int main()
+{
     ios::sync_with_stdio(false);
     cin.tie(0), cout.tie(0);
 
@@ -43,7 +46,7 @@ int main() {
     // freopen("xxx.out", "w", stdout);
 
     int T = 1; // cin >> T;
-    while(T--) {
+    while (T--) {
         solve();
     }
 

@@ -1,15 +1,26 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 #define int long long
 
 using namespace std;
 
-void read(int &x){ 
-	int f=1;x=0;char s=getchar();
-	while(s<'0'||s>'9'){if(s=='-')f=-1;s=getchar();}
-	while(s>='0'&&s<='9'){x=x*10+s-'0';s=getchar();}
+void read(int& x)
+{
+    int f = 1;
+    x = 0;
+    char s = getchar();
+    while (s < '0' || s > '9') {
+        if (s == '-')
+            f = -1;
+        s = getchar();
+    }
+    while (s >= '0' && s <= '9') {
+        x = x * 10 + s - '0';
+        s = getchar();
+    }
 }
 
-void solve() {
+void solve()
+{
     priority_queue<int, vector<int>, greater<int>> pq;
     int n;
     read(n);
@@ -30,7 +41,8 @@ void solve() {
     cout << cnt;
 }
 
-signed main() {
+signed main()
+{
     ios::sync_with_stdio(false);
     cin.tie(0), cout.tie(0);
 
@@ -38,7 +50,7 @@ signed main() {
     // freopen("xxx.out", "w", stdout);
 
     int T = 1; // cin >> T;
-    while(T--) {
+    while (T--) {
         solve();
     }
 

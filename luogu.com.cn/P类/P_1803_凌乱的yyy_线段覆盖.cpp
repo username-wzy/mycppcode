@@ -1,17 +1,20 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 #define ll long long
 
 using namespace std;
 
-bool cmp(pair<int, int> a, pair<int, int> b) {
+bool cmp(pair<int, int> a, pair<int, int> b)
+{
     return a.second < b.second;
 }
 
-void solve() {
+void solve()
+{
     int n;
     cin >> n;
     vector<pair<int, int>> v(n + 1);
-    for (int i = 1; i <= n; i++) cin >> v[i].first >> v[i].second;
+    for (int i = 1; i <= n; i++)
+        cin >> v[i].first >> v[i].second;
     sort(v.begin() + 1, v.end(), cmp);
     int last = v[1].second, ans = 1;
     for (int i = 2; i <= n; i++) {
@@ -23,7 +26,8 @@ void solve() {
     cout << ans;
 }
 
-int main() {
+int main()
+{
     ios::sync_with_stdio(false);
     cin.tie(0), cout.tie(0);
 
@@ -31,7 +35,7 @@ int main() {
     // freopen("xxx.out", "w", stdout);
 
     int T = 1; // cin >> T;
-    while(T--) {
+    while (T--) {
         solve();
     }
 

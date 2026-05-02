@@ -5,7 +5,7 @@ vector<int> g[N], ans;
 int in[N], cur[N];
 void dfs(int u)
 {
-    while(cur[u] < g[u].size()) {
+    while (cur[u] < g[u].size()) {
         int v = g[u][cur[u]++];
         dfs(v);
     }
@@ -28,7 +28,8 @@ int main()
     int st = 0, ed = 0, st_idx = 1;
     for (int i = 1; i <= n; i++) {
         const int gi_size = g[i].size();
-        if (in[i] == gi_size) continue;
+        if (in[i] == gi_size)
+            continue;
         if (in[i] - gi_size == 1)
             ed++;
         else if (gi_size - in[i] == 1) {

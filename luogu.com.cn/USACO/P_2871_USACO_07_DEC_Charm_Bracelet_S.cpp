@@ -1,11 +1,12 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 #define ll long long
 
 using namespace std;
 
-int n, v[3500], w[15000], dp[200000]; 
+int n, v[3500], w[15000], dp[200000];
 
-void solve() {
+void solve()
+{
     int n, W;
     cin >> n >> W;
     for (int i = 1; i <= n; i++) {
@@ -19,7 +20,8 @@ void solve() {
     cout << dp[W];
 }
 
-int main() {
+int main()
+{
     ios::sync_with_stdio(false);
     cin.tie(0), cout.tie(0);
 
@@ -27,7 +29,7 @@ int main() {
     // freopen("xxx.out", "w", stdout);
 
     int T = 1; // cin >> T;
-    while(T--) {
+    while (T--) {
         solve();
     }
 

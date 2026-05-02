@@ -1,11 +1,12 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 #define ll long long
 
 using namespace std;
 
 int dp[105][105], a[105];
 
-void solve() {
+void solve()
+{
     int n;
     cin >> n;
     for (int i = 1; i <= n; i++) {
@@ -15,10 +16,16 @@ void solve() {
         dp[i][i] = 0;
     }
     for (int i = 1; i <= n; i++) {
-        int u, v; 
+        int u, v;
         cin >> a[i] >> u >> v;
-        if (u > 0) {dp[i][u] = 1; dp[u][i] = 1;}
-        if (v > 0) {dp[i][v] = 1; dp[v][i] = 1;}
+        if (u > 0) {
+            dp[i][u] = 1;
+            dp[u][i] = 1;
+        }
+        if (v > 0) {
+            dp[i][v] = 1;
+            dp[v][i] = 1;
+        }
     }
     for (int k = 1; k <= n; k++) {
         for (int i = 1; i <= n; i++) {
@@ -38,7 +45,8 @@ void solve() {
     cout << ans;
 }
 
-int main() {
+int main()
+{
     ios::sync_with_stdio(false);
     cin.tie(0), cout.tie(0);
 
@@ -46,7 +54,7 @@ int main() {
     // freopen("xxx.out", "w", stdout);
 
     int T = 1; // cin >> T;
-    while(T--) {
+    while (T--) {
         solve();
     }
 

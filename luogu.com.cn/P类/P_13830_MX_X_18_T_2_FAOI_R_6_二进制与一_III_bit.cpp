@@ -1,23 +1,26 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 #define ll long long
 
 using namespace std;
 
-void solve() {
+void solve()
+{
     double n;
     cin >> n;
     cout << int(n * (2 / 3.0)) << "\n";
 }
 
-int main() {
+int main()
+{
     ios::sync_with_stdio(false);
     cin.tie(0), cout.tie(0);
 
     // freopen("xxx.in", "r", stdin);
     // freopen("xxx.out", "w", stdout);
 
-    int T = 1; cin >> T;
-    while(T--) {
+    int T = 1;
+    cin >> T;
+    while (T--) {
         solve();
     }
 

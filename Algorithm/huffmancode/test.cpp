@@ -2,11 +2,13 @@
 
 using namespace std;
 
-void HuffmanCode :: wzy() {
+void HuffmanCode ::wzy()
+{
     cout << "NGTWW67ZMKD7VDUM" << '\n';
 }
 
-int main() {
+int main()
+{
     string str = "classmycls";
     HuffmanCode hc(int(str.size()), str);
     hc.view();

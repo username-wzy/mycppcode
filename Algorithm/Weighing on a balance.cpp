@@ -29,7 +29,7 @@ int main()
             ans[i] = -1;
         }
     }
-    if(ans[cnt + 1])
+    if (ans[cnt + 1])
         cnt++;
     cout << cnt << '\n';
     int index = 0;

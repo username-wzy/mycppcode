@@ -1,18 +1,19 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 #define ll long long
 
 using namespace std;
 
-void solve() {
+void solve()
+{
     string s, target, t;
     getline(cin, target);
     getline(cin, s);
-    for (auto &p : target) {
+    for (auto& p : target) {
         if (isupper(p)) {
             p = tolower(p);
         }
     }
-    for (auto &p : s) {
+    for (auto& p : s) {
         if (isupper(p)) {
             p = tolower(p);
         }
@@ -24,7 +25,8 @@ void solve() {
             cnt++;
         }
     }
-    if (cnt == 0) cout << -1;
+    if (cnt == 0)
+        cout << -1;
     else {
         cout << cnt << " ";
         int i = 0;
@@ -32,14 +34,15 @@ void solve() {
             if (t == target) {
                 int k = s.find(t);
                 cout << k;
-                return ;
+                return;
             }
             i++;
         }
     }
 }
 
-int main() {
+int main()
+{
     ios::sync_with_stdio(false);
     cin.tie(0), cout.tie(0);
 
@@ -47,7 +50,7 @@ int main() {
     // freopen("xxx.out", "w", stdout);
 
     int T = 1; // cin >> T;
-    while(T--) {
+    while (T--) {
         solve();
     }
 

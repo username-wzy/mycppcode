@@ -1,4 +1,4 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 #define ll long long
 
 using namespace std;
@@ -8,7 +8,8 @@ ll n, m, a, b, in[N], out[N], ans[N];
 vector<ll> g[N];
 queue<ll> q;
 
-void solve() {
+void solve()
+{
     cin >> n >> m;
     for (int i = 0; i < m; i++) {
         cin >> a >> b;
@@ -39,16 +40,17 @@ void solve() {
     }
 }
 
-int main() {
+int main()
+{
     ios::sync_with_stdio(false);
     cin.tie(0), cout.tie(0);
-    
-    //freopen("xxx.in", "r", stdin);
-    //freopen("xxx.out", "w", stdout);
-    int T = 1; //cin >> T;
+
+    // freopen("xxx.in", "r", stdin);
+    // freopen("xxx.out", "w", stdout);
+    int T = 1; // cin >> T;
     while (T--) {
         solve();
     }
-    
+
     return 0;
 }

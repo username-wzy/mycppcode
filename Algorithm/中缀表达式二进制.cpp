@@ -1,14 +1,16 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 #define ll long long
 
 using namespace std;
 
-void solve() {
+void solve()
+{
     string s;
     cin >> s;
     stack<int> stk;
     for (int i = 0; i < s.size(); i++) {
-        if (isdigit(s[i])) stk.push(s[i] - '0');
+        if (isdigit(s[i]))
+            stk.push(s[i] - '0');
         if (s[i] == '&') {
             bool x = stk.top() - '0';
             stk.pop();
@@ -18,13 +20,15 @@ void solve() {
     }
     bool ans = 0;
     while (stk.size()) {
-        if (stk.top()) ans = 1;
+        if (stk.top())
+            ans = 1;
         stk.pop();
     }
     cout << ans;
 }
 
-int main() {
+int main()
+{
     ios::sync_with_stdio(false);
     cin.tie(0), cout.tie(0);
 
@@ -32,7 +36,7 @@ int main() {
     // freopen("xxx.out", "w", stdout);
 
     int T = 1; // cin >> T;
-    while(T--) {
+    while (T--) {
         solve();
     }
 

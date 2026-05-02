@@ -1,16 +1,18 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 #define int long long
 
 using namespace std;
 
-void solve() {
-    int n; 
+void solve()
+{
+    int n;
     cin >> n;
     vector<pair<int, int>> a;
     priority_queue<int> pq;
     for (int i = 1; i <= n; i++) {
-        int t1, t2; cin >> t1 >> t2; 
-        a.push_back({t2, t1});
+        int t1, t2;
+        cin >> t1 >> t2;
+        a.push_back({ t2, t1 });
     }
     int sum = 0;
     sort(a.begin(), a.end());
@@ -28,7 +30,8 @@ void solve() {
     cout << pq.size();
 }
 
-signed main() {
+signed main()
+{
     ios::sync_with_stdio(false);
     cin.tie(0), cout.tie(0);
 
@@ -36,7 +39,7 @@ signed main() {
     // freopen("xxx.out", "w", stdout);
 
     int T = 1; // cin >> T;
-    while(T--) {
+    while (T--) {
         solve();
     }
 

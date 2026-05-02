@@ -7,8 +7,8 @@ sorted:
 */
 
 #include <algorithm>
-#include <iostream>
 #include <iomanip>
+#include <iostream>
 
 const int N = 1005;
 
@@ -35,6 +35,7 @@ int main()
         res += a[i].time * (n - i);
     for (int i = 1; i <= n; i++)
         std::cout << a[i].id << ' ';
-    std::cout << '\n' << std::fixed << std::setprecision(2) << static_cast<double>(res) / n;
+    std::cout << '\n'
+              << std::fixed << std::setprecision(2) << static_cast<double>(res) / n;
     return 0;
 }

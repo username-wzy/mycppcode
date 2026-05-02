@@ -1,4 +1,4 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 #define ll long long
 
 using namespace std;
@@ -6,17 +6,20 @@ int n, ans, m, trie[205][26], idx = 0;
 string s;
 bool dp[1100000], cnt[205];
 
-void insert() {
+void insert()
+{
     int p = 0;
     for (int i = s.size() - 1; i >= 0; i--) {
         int x = s[i] - 'a';
-        if (!trie[p][x]) trie[p][x] = ++idx;
+        if (!trie[p][x])
+            trie[p][x] = ++idx;
         p = trie[p][x];
     }
     cnt[p] = 1;
 }
 
-void solve() {
+void solve()
+{
     cin >> n >> m;
     while (n--) {
         cin >> s;
@@ -28,8 +31,8 @@ void solve() {
     //     }
     //     cerr << '\n';
     // }
-    while(m--) {
-        memset(dp,0, sizeof dp);
+    while (m--) {
+        memset(dp, 0, sizeof dp);
         ans = 0;
         dp[0] = 1;
         cin >> s;
@@ -40,7 +43,8 @@ void solve() {
                 int x = s[j] - 'a';
                 // cout<<"dog";
                 // cout<<p<<" "<<x<<" "<<trie[p][x]<<endl;
-                if (!trie[p][x]) break;
+                if (!trie[p][x])
+                    break;
                 // cout<<"dog";
                 p = trie[p][x];
                 if (cnt[p] && dp[j - 1]) {
@@ -54,7 +58,8 @@ void solve() {
     }
 }
 
-int main() {
+int main()
+{
     ios::sync_with_stdio(false);
     cin.tie(0), cout.tie(0);
 
@@ -62,7 +67,7 @@ int main() {
     // freopen("xxx.out", "w", stdout);
 
     int T = 1; // cin >> T;
-    while(T--) {
+    while (T--) {
         solve();
     }
 

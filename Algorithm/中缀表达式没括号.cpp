@@ -1,9 +1,10 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 #define ll long long
 
 using namespace std;
 
-void solve() {
+void solve()
+{
     int ans = 0;
     string s, t;
     getline(cin, s);
@@ -13,14 +14,19 @@ void solve() {
     while (ss >> s) {
         if (s == "+" || s == "-") {
             ss >> t;
-            if (s == "-") stk.push(-stoi(t));
-            else stk.push(stoi(t));
+            if (s == "-")
+                stk.push(-stoi(t));
+            else
+                stk.push(stoi(t));
         } else if (s == "*" || s == "/") {
             ss >> t;
-            int p = stk.top(); stk.pop();
+            int p = stk.top();
+            stk.pop();
             int q = stoi(t);
-            if (s == "*") stk.push(p * q);
-            else stk.push(p / q);
+            if (s == "*")
+                stk.push(p * q);
+            else
+                stk.push(p / q);
         } else {
             stk.push(stoi(s));
         }
@@ -32,7 +38,8 @@ void solve() {
     cout << ans;
 }
 
-int main() {
+int main()
+{
     ios::sync_with_stdio(false);
     cin.tie(0), cout.tie(0);
 
@@ -40,7 +47,7 @@ int main() {
     // freopen("xxx.out", "w", stdout);
 
     int T = 1; // cin >> T;
-    while(T--) {
+    while (T--) {
         solve();
     }
 

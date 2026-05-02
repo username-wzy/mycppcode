@@ -1,61 +1,69 @@
-w#include<bits/stdc++.h>
-#define ll long long
-
+#include <bits/stdc++.h>
+#define debug(...) cerr << #__VA_ARGS__ << " = " << __VA_ARGS__ << endl;
+#define IAK std::ios::sync_with_stdio(false);
+#define IOI std::cin.tie(nullptr)
 using namespace std;
+using ll = long long;
+using ull = unsigned long long;
+using pii = pair<int, int>;
+using pll = pair<long, long>;
 
-vector<pair<int, int>> g[105]; 
+const int N = 205;
+
+int t[N];
 int n, m;
+int dist[N];
 
-int dijkstra(int s, int e) {
-	priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> pq;
-	pq.push({0, s});
-	vector<int> dis(n + 1, 1e9), vis(n + 1);
-	dis[s] = 0;
-	while (!pq.empty()) {
-		auto u  = pq.top().second;
-		pq.pop();
-		for (auto [v, ww] : g[u]) {
-			if (!vis[v]) {
-				if (dis[u] + ww < dis[v]) {
-					dis[v] = dis[u] + ww;
-					pq.push({dis[v], v});
-				}
-			}
-		}
-	}
-	return dis[e];
-}
+vector<pll> g[N];
 
-void solve() {
-   cin >> n >> m;
-   for (int i = 1; i <= m; i++) {
-		int u, v, w;
-		cin >> u >> v >> w;
-		g[u].push_back({v, w});
-		g[v].push_back({u, w});
-   }
-   cout << dijkstra(1, 4);
-}
-
-int main() {
-    ios::sync_with_stdio(false);
-    cin.tie(0), cout.tie(0);
-
-    // freopen("xxx.in", "r", stdin);
-    // freopen("xxx.out", "w", stdout);
-
-    int T = 1; // cin >> T;
-    while(T--) {
-        solve();
+ll dijkstra(ll st, ll ed, ll time)
+{
+    priority_queue<pll, vector<pll>, greater<pll>> q;
+    q.push({ 0, st });
+    fill(dist, dist + n, 0x3f3f3f3f);
+    dist[st] = 0;
+    while (!q.empty()) {
+        int u = q.top().second, weight = q.top().first;
+        q.pop();
+        if (weight > dist[u]) {
+            continue;
+        }
+        for (auto [v, w] : g[u]) {
+            if (dist[u] + w < dist[v]) {
+                dist[v] = dist[u] + weight;
+                q.push({ dist[v], w });
+            }
+        }
     }
+    return (dist[ed] == 0x3f3f3f3f ? -1 : dist[ed]);
+}
 
+void solve()
+{
+    cin >> n >> m;
+    for (int i = 0; i < n; i++) {
+        cin >> t[i];
+    }
+    for (int i = 1; i <= m; i++) {
+        ll u, v, w;
+        cin >> u >> v >> w;
+        g[u].push_back({ v, w });
+    }
+    int q;
+    cin >> q;
+    while (q--) {
+        ll x, y, t;
+        cin >> x >> y >> t;
+        cout << dijkstra(x, y, t);
+    }
+}
+
+int main()
+{
+    IAK IOI;
+    int T = 1;
+    // cin >> T;
+    while (T--)
+        solve();
     return 0;
 }
-/*
-4 5
-1 2 3
-1 3 1
-1 4 5
-2 4 6
-3 4 2
-*/

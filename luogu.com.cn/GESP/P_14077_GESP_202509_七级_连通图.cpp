@@ -61,7 +61,7 @@
 
 // TLE
 
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 #define ll long long
 
 using namespace std;
@@ -69,15 +69,18 @@ using namespace std;
 bool vis[100005];
 vector<int> g[100005];
 
-void dfs(int u) {
-    if (vis[u]) return ;
+void dfs(int u)
+{
+    if (vis[u])
+        return;
     vis[u] = true;
     for (auto v : g[u]) {
         dfs(v);
     }
 }
 
-void solve() {
+void solve()
+{
     int n, m;
     cin >> n >> m;
     for (int i = 1; i <= m; i++) {
@@ -96,7 +99,8 @@ void solve() {
     cout << cnt - 1;
 }
 
-int main() {
+int main()
+{
     ios::sync_with_stdio(false);
     cin.tie(0), cout.tie(0);
 
@@ -104,7 +108,7 @@ int main() {
     // freopen("xxx.out", "w", stdout);
 
     int T = 1; // cin >> T;
-    while(T--) {
+    while (T--) {
         solve();
     }
 

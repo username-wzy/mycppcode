@@ -1,4 +1,4 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 #define ll long long
 
 using namespace std;
@@ -6,27 +6,32 @@ using namespace std;
 vector<int> g[100005];
 bool a[100005], f[100005];
 
-void solve() {
+void solve()
+{
     int n;
     cin >> n;
     for (int i = 2; i <= n; i++) {
-        int x; cin >> x;
+        int x;
+        cin >> x;
         g[x].push_back(i);
     }
-    string s; cin >> s;
+    string s;
+    cin >> s;
     for (int i = 1; i <= n; i++) {
         a[i] = s[i - 1] - '0';
     }
-    int q; cin >> q;
+    int q;
+    cin >> q;
     while (q--) {
         int x;
         cin >> x;
         f[x]++;
     }
-    for (int i = )
+    for (int i =)
 }
 
-int main() {
+int main()
+{
     ios::sync_with_stdio(false);
     cin.tie(0), cout.tie(0);
 
@@ -34,7 +39,7 @@ int main() {
     // freopen("xxx.out", "w", stdout);
 
     int T = 1; // cin >> T;
-    while(T--) {
+    while (T--) {
         solve();
     }
 

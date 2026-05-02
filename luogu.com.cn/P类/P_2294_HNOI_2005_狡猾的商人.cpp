@@ -1,12 +1,12 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 #define ll long long
 
 using namespace std;
 
-
 int n, m;
 
-bool spfa(vector<int> &dis, vector<pair<int, int>> &g) {
+bool spfa(vector<int>& dis, vector<pair<int, int>>& g)
+{
     queue<int> q;
     dis[n + 1] = 0;
     vector<bool> vis(n, false);
@@ -24,7 +24,8 @@ bool spfa(vector<int> &dis, vector<pair<int, int>> &g) {
                 if (!vis[v]) {
                     q.push(v);
                     mp[v]++;
-                    if (mp[v] > n + 1) return false;
+                    if (mp[v] > n + 1)
+                        return false;
                     vis[v] = true;
                 }
             }
@@ -33,17 +34,19 @@ bool spfa(vector<int> &dis, vector<pair<int, int>> &g) {
     return true;
 }
 
-void solve() {
+void solve()
+{
     vector<int> dis(int(1e2 + 5), 1e18);
     vector<pair<int, int>> g[int(1e3 + 5)];
     cin >> n >> m;
     for (int i = 1; i <= m; i++) {
         int u, v, w;
         cin >> u >> v >> w;
-        g[u - 1].push_back({v, w});
-        g[v].push_back({u - 1, -w});
+        g[u - 1].push_back({ v, w });
+        g[v].push_back({ u - 1, -w });
     }
-    for (int i = 1; i <= n; i++) g[n + 1].push_back({i, 0});
+    for (int i = 1; i <= n; i++)
+        g[n + 1].push_back({ i, 0 });
     if (spfa(dis, g)) {
         cout << "true\n";
     } else {
@@ -51,15 +54,17 @@ void solve() {
     }
 }
 
-int main() {
+int main()
+{
     ios::sync_with_stdio(false);
     cin.tie(0), cout.tie(0);
 
     // freopen("xxx.in", "r", stdin);
     // freopen("xxx.out", "w", stdout);
 
-    int T = 1; cin >> T;
-    while(T--) {
+    int T = 1;
+    cin >> T;
+    while (T--) {
         solve();
     }
 

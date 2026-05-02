@@ -1,23 +1,29 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 #define ll long long
 
 using namespace std;
 
 int f[305], cnt[305];
 
-void dfs(int x) {
+void dfs(int x)
+{
     cnt[x]++;
-    if (f[x] != x) dfs(f[x]);
+    if (f[x] != x)
+        dfs(f[x]);
 }
 
-void solve() {
+void solve()
+{
     int n;
     cin >> n;
-    for (int i = 1; i < n; i++) cin >> f[i];
-    int q; cin >> q;
+    for (int i = 1; i < n; i++)
+        cin >> f[i];
+    int q;
+    cin >> q;
     while (q--) {
         memset(cnt, 0, sizeof(cnt));
-        int m; cin >> m;
+        int m;
+        cin >> m;
         for (int i = 1; i <= m; i++) {
             int x;
             cin >> x;
@@ -33,7 +39,8 @@ void solve() {
     }
 }
 
-int main() {
+int main()
+{
     ios::sync_with_stdio(false);
     cin.tie(0), cout.tie(0);
 
@@ -41,7 +48,7 @@ int main() {
     // freopen("xxx.out", "w", stdout);
 
     int T = 1; // cin >> T;
-    while(T--) {
+    while (T--) {
         solve();
     }
 

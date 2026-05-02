@@ -1,4 +1,4 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 #define int long long
 
 using namespace std;
@@ -7,18 +7,21 @@ constexpr int N = 5e5 + 5;
 
 int bit[N], n, m, a[N];
 
-int lowbit(int x) {
+int lowbit(int x)
+{
     return x & -x;
 }
 
-void add(int x) {
+void add(int x)
+{
     while (x <= n) {
         bit[x]++;
         x += lowbit(x);
     }
 }
 
-int sum(int x) {
+int sum(int x)
+{
     int t = 0;
     while (x > 0) {
         t += bit[x];
@@ -27,7 +30,8 @@ int sum(int x) {
     return t;
 }
 
-void solve() {
+void solve()
+{
     cin >> n;
     set<int> st;
     unordered_map<int, int> mp;
@@ -47,7 +51,8 @@ void solve() {
     cout << ans;
 }
 
-signed  main() {
+signed main()
+{
     ios::sync_with_stdio(false);
     cin.tie(0), cout.tie(0);
 
@@ -55,7 +60,7 @@ signed  main() {
     // freopen("xxx.out", "w", stdout);
 
     int T = 1; // cin >> T;
-    while(T--) {
+    while (T--) {
         solve();
     }
 

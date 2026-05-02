@@ -1,19 +1,21 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 #define ll long long
 
 using namespace std;
 
-unordered_map<string, int> idx = { {"+", 1},{"-", 1},{"*", 2},{"/", 2},{"%", 2},{"^", 3},{"(", 0} };
+unordered_map<string, int> idx = { { "+", 1 }, { "-", 1 }, { "*", 2 }, { "/", 2 }, { "%", 2 }, { "^", 3 }, { "(", 0 } };
 
-bool isopr(string &s) {
+bool isopr(string& s)
+{
     return (s == "+" || s == "-" || s == "*" || s == "/" || s == "%" || s == "^");
 }
 
-string split(string s) {
+string split(string s)
+{
     string t;
     bool flag = 1;
     for (auto i : s) {
-        if(i == '-' && flag) {
+        if (i == '-' && flag) {
             t.push_back(i);
             flag = 0;
         } else if (i == '+' || i == '-' || i == '/' || i == '*' || i == '(' || i == ')' || i == '^' || i == '%') {
@@ -29,28 +31,39 @@ string split(string s) {
     return t;
 }
 
-int calc(vector<string> &v) {
+int calc(vector<string>& v)
+{
     stack<int> stk;
     for (auto s : v) {
-        if(s == "+") {
-            int b = stk.top(); stk.pop();
-            int a = stk.top(); stk.pop();
+        if (s == "+") {
+            int b = stk.top();
+            stk.pop();
+            int a = stk.top();
+            stk.pop();
             stk.push(a + b);
         } else if (s == "-") {
-            int b = stk.top(); stk.pop();
-            int a = stk.top(); stk.pop();
+            int b = stk.top();
+            stk.pop();
+            int a = stk.top();
+            stk.pop();
             stk.push(a - b);
         } else if (s == "*") {
-            int b = stk.top(); stk.pop();
-            int a = stk.top(); stk.pop();
+            int b = stk.top();
+            stk.pop();
+            int a = stk.top();
+            stk.pop();
             stk.push(a * b);
         } else if (s == "/") {
-            int b = stk.top(); stk.pop();
-            int a = stk.top(); stk.pop();
+            int b = stk.top();
+            stk.pop();
+            int a = stk.top();
+            stk.pop();
             stk.push(a / b);
         } else if (s == "%") {
-            int b = stk.top(); stk.pop();
-            int a = stk.top(); stk.pop();
+            int b = stk.top();
+            stk.pop();
+            int a = stk.top();
+            stk.pop();
             stk.push(a % b);
         } else {
             stk.push(stoi(s));
@@ -59,7 +72,8 @@ int calc(vector<string> &v) {
     return stk.top();
 }
 
-void solve() {
+void solve()
+{
     string s;
     cin >> s;
     string t = split(s);
@@ -68,27 +82,33 @@ void solve() {
     stack<string> stk;
     vector<string> ans;
     while (ss >> s) {
-        if (s == "(") stk.push(s);
+        if (s == "(")
+            stk.push(s);
         else if (isopr(s)) {
             while (!stk.empty() && idx[stk.top()] >= idx[s]) {
-                ans.push_back(stk.top()); stk.pop();
+                ans.push_back(stk.top());
+                stk.pop();
             }
             stk.push(s);
-        } else if(s == ")") {
+        } else if (s == ")") {
             while (stk.top() != "(") {
-                ans.push_back(stk.top()); stk.pop();
+                ans.push_back(stk.top());
+                stk.pop();
             }
             stk.pop();
-        } else ans.push_back(s);
+        } else
+            ans.push_back(s);
     }
     while (stk.size()) {
-        ans.push_back(stk.top()); stk.pop();
+        ans.push_back(stk.top());
+        stk.pop();
     }
     // for (auto i : ans) cout << i << " ";
     cout << calc(ans);
 }
 
-int main() {
+int main()
+{
     ios::sync_with_stdio(false);
     cin.tie(0), cout.tie(0);
 
@@ -96,7 +116,7 @@ int main() {
     // freopen("xxx.out", "w", stdout);
 
     int T = 1; // cin >> T;
-    while(T--) {
+    while (T--) {
         solve();
     }
 

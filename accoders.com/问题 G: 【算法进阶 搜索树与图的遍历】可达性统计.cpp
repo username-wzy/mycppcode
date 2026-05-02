@@ -9,7 +9,8 @@ int in[N];
 vector<int> topo;
 bitset<N> bs[N];
 
-void toposort() {
+void toposort()
+{
     queue<int> q;
     for (int i = 1; i <= n; i++)
         if (in[i] == 0)
@@ -47,7 +48,7 @@ int main()
         g[u].push_back(v);
         in[v]++;
     }
-   
+
     toposort();
     return 0;
 }

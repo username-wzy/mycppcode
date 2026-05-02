@@ -1,14 +1,15 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 #define ll long long
 
 using namespace std;
 
 char a[505][505];
 
-void solve() {
+void solve()
+{
     int n, m;
     cin >> n >> m;
-    
+
     for (int i = 1; i <= n; i++) {
         for (int j = 1; j <= m; j++) {
             if (i % 2 == 1) {
@@ -26,7 +27,7 @@ void solve() {
             }
         }
     }
-    
+
     for (int i = 1; i <= n; i++) {
         for (int j = 1; j <= m; j++) {
             cout << a[i][j];
@@ -35,14 +36,15 @@ void solve() {
     }
 }
 
-int main() {
+int main()
+{
     ios::sync_with_stdio(false);
     cin.tie(0), cout.tie(0);
-    
+
     int T = 1;
-    while(T--) {
+    while (T--) {
         solve();
     }
-    
+
     return 0;
 }

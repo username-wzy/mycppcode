@@ -1,16 +1,17 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 #define ll long long
 
 using namespace std;
 
-void solve() {
+void solve()
+{
     int x, cnt = 0, m = 0;
     for (int i = 1; i <= 12; i++) {
         cin >> x;
         m += 300 - x;
         if (m < 0) {
             cout << '-' << i;
-            return ;
+            return;
         }
         while (m >= 100) {
             cnt += 100;
@@ -20,7 +21,8 @@ void solve() {
     cout << cnt * 1.2 + m;
 }
 
-int main() {
+int main()
+{
     ios::sync_with_stdio(false);
     cin.tie(0), cout.tie(0);
 
@@ -28,7 +30,7 @@ int main() {
     // freopen("xxx.out", "w", stdout);
 
     int T = 1; // cin >> T;
-    while(T--) {
+    while (T--) {
         solve();
     }
 

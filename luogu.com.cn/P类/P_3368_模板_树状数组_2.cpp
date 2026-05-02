@@ -1,4 +1,4 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 #define ll long long
 
 using namespace std;
@@ -7,18 +7,21 @@ constexpr int N = 5e5 + 5;
 
 int a[N], bit[N], n, m;
 
-int lowbit(int x) {
+int lowbit(int x)
+{
     return x & -x;
 }
 
-void add(int x, int d) {
+void add(int x, int d)
+{
     while (x <= n) {
         bit[x] += d;
         x += lowbit(x);
     }
 }
 
-int sum(int x) {
+int sum(int x)
+{
     int t = 0;
     while (x > 0) {
         t += bit[x];
@@ -27,7 +30,8 @@ int sum(int x) {
     return t;
 }
 
-void solve() {
+void solve()
+{
     cin >> n >> m;
     for (int i = 1; i <= n; i++) {
         cin >> a[i];
@@ -42,13 +46,15 @@ void solve() {
             add(x, k);
             add(y + 1, -k);
         } else {
-            int x; cin >> x;
+            int x;
+            cin >> x;
             cout << sum(x) << '\n';
         }
     }
 }
 
-int main() {
+int main()
+{
     ios::sync_with_stdio(false);
     cin.tie(0), cout.tie(0);
 
@@ -56,7 +62,7 @@ int main() {
     // freopen("xxx.out", "w", stdout);
 
     int T = 1; // cin >> T;
-    while(T--) {
+    while (T--) {
         solve();
     }
 

@@ -1,4 +1,4 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 #define int long long
 
 using namespace std;
@@ -7,7 +7,8 @@ vector<int> dis((int)(3e4 + 5), LLONG_MIN);
 vector<pair<int, int>> g[(int)(3e4 + 5)];
 int n, m;
 
-void spfa() {
+void spfa()
+{
     queue<int> q;
     vector<bool> vis(n + 1, false);
     for (int i = 0; i <= n; i++) {
@@ -31,24 +32,26 @@ void spfa() {
     }
 }
 
-void solve() {
+void solve()
+{
     cin >> n >> m;
     for (int i = 0; i < n; i++) {
-        g[i].push_back({i + 1, 0});
+        g[i].push_back({ i + 1, 0 });
     }
     for (int i = 1; i <= n; i++) {
-        g[i].push_back({i - 1, -1});
+        g[i].push_back({ i - 1, -1 });
     }
     for (int i = 1; i <= m; i++) {
         int u, v, w;
         cin >> u >> v >> w;
-        g[u - 1].push_back({v, w});
+        g[u - 1].push_back({ v, w });
     }
     spfa();
     cout << dis[n];
 }
 
-signed main() {
+signed main()
+{
     ios::sync_with_stdio(false);
     cin.tie(0), cout.tie(0);
 
@@ -56,7 +59,7 @@ signed main() {
     // freopen("xxx.out", "w", stdout);
 
     int T = 1; // cin >> T;
-    while(T--) {
+    while (T--) {
         solve();
     }
 

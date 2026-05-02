@@ -47,9 +47,9 @@ int main()
     // int T;
     // cin >> T;
     // while (T--) {
-        ll n, m;
-        cin >> n >> m;
-        cout << lucas(n, m, p) << '\n';
+    ll n, m;
+    cin >> n >> m;
+    cout << lucas(n, m, p) << '\n';
     // }
 
     return 0;

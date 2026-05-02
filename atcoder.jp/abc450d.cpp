@@ -22,8 +22,7 @@ int main()
         return 0;
     }
     ll ans = a[n] - a[1];
-    for (int i = 1; i < a.size(); i++)
-    {
+    for (int i = 1; i < a.size(); i++) {
         ans = min(ans, (a[i] + k) - a[i + 1]);
     }
     cout << ans << '\n';

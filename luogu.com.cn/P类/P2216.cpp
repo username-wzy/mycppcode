@@ -19,14 +19,11 @@ int main()
         for (int j = 1; j <= m; j++) {
             cin >> st[i][j][0][0];
             st[i][j][0][0]
-               
         }
     }
-    
-
 
     for (int i = 1; i <= n; i++) {
-        for (int j = 1; j <= )
+        for (int j = 1; j <=)
     }
-        return 0;
+    return 0;
 }

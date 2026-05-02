@@ -20,6 +20,5 @@ int main()
         g[v].push_back(u);
     }
 
-    
     return 0;
 }

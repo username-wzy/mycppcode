@@ -16,8 +16,8 @@ long long exgcd(long long a, long long b, long long& x, long long& y)
     return d;
 }
 
-int main() {
+int main()
+{
     int a, b;
     cin >> a;
-    
 }

@@ -4,7 +4,7 @@ using namespace std;
 const int N = 100005;
 
 int n, K;
-vector<pair<int,int>> adj[N]; // adj[u] = {v, edge_index}
+vector<pair<int, int>> adj[N]; // adj[u] = {v, edge_index}
 int w[N]; // edge weight, indexed by edge_index
 int fa[N], fa_edge[N]; // parent and parent-edge in BFS/DFS
 int dep[N], dist[N];
@@ -21,7 +21,8 @@ int d1, d2; // 两次求得的直径长度
 // 带负权树的直径用树形DP求
 
 // BFS求最远点(仅用于全正权时)
-int bfs(int s) {
+int bfs(int s)
+{
     memset(vis, false, sizeof(vis));
     queue<int> q;
     q.push(s);
@@ -31,14 +32,16 @@ int bfs(int s) {
     fa_edge[s] = -1;
     int far_node = s;
     while (!q.empty()) {
-        int u = q.front(); q.pop();
+        int u = q.front();
+        q.pop();
         for (auto [v, eid] : adj[u]) {
             if (!vis[v]) {
                 vis[v] = true;
                 dist[v] = dist[u] + w[eid];
                 fa[v] = u;
                 fa_edge[v] = eid;
-                if (dist[v] > dist[far_node]) far_node = v;
+                if (dist[v] > dist[far_node])
+                    far_node = v;
                 q.push(v);
             }
         }
@@ -50,19 +53,26 @@ int bfs(int s) {
 int ans_diam;
 
 // 返回从u出发往子树走的最长链长度
-int dfs_dp(int u, int father) {
+int dfs_dp(int u, int father)
+{
     int mx1 = 0, mx2 = 0; // 最长和次长链
     for (auto [v, eid] : adj[u]) {
-        if (v == father) continue;
+        if (v == father)
+            continue;
         int val = dfs_dp(v, u) + w[eid];
-        if (val > mx1) { mx2 = mx1; mx1 = val; }
-        else if (val > mx2) { mx2 = val; }
+        if (val > mx1) {
+            mx2 = mx1;
+            mx1 = val;
+        } else if (val > mx2) {
+            mx2 = val;
+        }
     }
     ans_diam = max(ans_diam, mx1 + mx2);
     return max(mx1, 0); // 如果最长链为负，不选
 }
 
-int main() {
+int main()
+{
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
 
@@ -70,8 +80,8 @@ int main() {
     for (int i = 0; i < n - 1; i++) {
         int a, b;
         cin >> a >> b;
-        adj[a].push_back({b, i});
-        adj[b].push_back({a, i});
+        adj[a].push_back({ b, i });
+        adj[b].push_back({ a, i });
         w[i] = 1;
     }
 

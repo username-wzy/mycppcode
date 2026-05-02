@@ -1,10 +1,10 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 
 using namespace std;
 typedef long long ll;
 
-
-ll qpow(ll a, ll b, ll mod) {
+ll qpow(ll a, ll b, ll mod)
+{
     a %= mod;
     ll res = 1;
     while (b) {
@@ -16,11 +16,11 @@ ll qpow(ll a, ll b, ll mod) {
     return res;
 }
 
-int main() {
+int main()
+{
 
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
-
 
     int q;
     cin >> q;
