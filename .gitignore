@@ -1,3 +1,4 @@
+.gitignore
 # 编译产物
 *.o
 *.obj
@@ -25,3 +26,7 @@ Thumbs.db
 
 # python
 venv/
+
+ahacode/
+# AI Context
+.cobridge

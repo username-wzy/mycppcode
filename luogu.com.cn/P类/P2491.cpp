@@ -21,7 +21,7 @@ void add(int u, int v, int w)
 }
 
 // 第一次 DFS 找最远点，第二次找直径并记录前驱
-void dfs_dist(int u, int fa)
+void dfs(int u, int fa)
 {
     for (int i = head[u]; i; i = edge[i].next) {
         int v = edge[i].to;
@@ -29,7 +29,7 @@ void dfs_dist(int u, int fa)
             continue;
         dist[v] = dist[u] + edge[i].w;
         pre[v] = u;
-        dfs_dist(v, u);
+        dfs(v, u);
     }
 }
 
@@ -51,14 +51,14 @@ int main()
     // 1. 找直径
     int A = 1, B = 1;
     dist[A] = 0;
-    dfs_dist(A, 0);
+    dfs(A, 0);
     for (int i = 1; i <= n; i++)
         if (dist[i] > dist[A])
             A = i;
 
     dist[A] = 0;
     pre[A] = 0;
-    dfs_dist(A, 0);
+    dfs(A, 0);
     for (int i = 1; i <= n; i++)
         if (dist[i] > dist[B])
             B = i;
@@ -82,7 +82,7 @@ int main()
     for (int i = 1; i <= cnt; i++) {
         int u = path[i];
         dist[u] = 0; // 重置该点，向非直径区域探索
-        dfs_dist(u, 0);
+        dfs(u, 0);
     }
 
     for (int i = 1; i <= n; i++) {

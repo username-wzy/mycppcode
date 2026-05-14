@@ -8,7 +8,7 @@ constexpr int inf = 0x3f3f3f3f;
 
 vector<int> graph[N];
 int prefix[N];
-int ans = inf;
+int dis = inf;
 int n;
 
 void dfs(int u, int fa)
@@ -23,7 +23,7 @@ void dfs(int u, int fa)
         max_part = max(max_part, prefix[v]);
     }
     max_part = max(max_part, n - prefix[u]);
-    ans = min(max_part, ans);
+    dis = min(max_part, dis);
 }
 
 int main()
@@ -42,6 +42,6 @@ int main()
 
     dfs(1, 0);
 
-    cout << ans;
+    cout << dis;
     return 0;
 }

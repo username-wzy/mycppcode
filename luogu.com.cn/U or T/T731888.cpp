@@ -4,12 +4,12 @@ using namespace std;
 typedef long long ll;
 
 int l[15], r[15];
-int n, ans = 0;
+int n, dis = 0;
 
 void dfs(int u, int sum)
 {
     if (u == n) {
-        ans = max(sum, ans);
+        dis = max(sum, dis);
         return;
     }
     dfs(u + 1, sum);
@@ -29,9 +29,9 @@ void solve()
     for (int i = 1; i <= n; i++) {
         cin >> l[i] >> r[i];
     }
-    ans = 0;
+    dis = 0;
     dfs(1, 0);
-    cout << ans << '\n';
+    cout << dis << '\n';
 }
 
 int main()

@@ -8,7 +8,7 @@ const int N = 2e5 + 5;
 int fa[N]; // 我是你baba
 int cnt[N][2]; // cnt[u][0 or 1] 表示以u为根节点的连通块同色与异色的数量
 bool dist[N]; // 这个点是黑还是白
-int ans = 0;
+int dis = 0;
 bool ok = true; // 奇环
 
 int find(int x)
@@ -26,8 +26,8 @@ bool unite(int x, int y)
     int ry = find(y);
     if (rx != ry) {
         // 1. 先减去合并前的贡献
-        ans -= min(cnt[rx][0], cnt[rx][1]);
-        ans -= min(cnt[ry][0], cnt[ry][1]);
+        dis -= min(cnt[rx][0], cnt[rx][1]);
+        dis -= min(cnt[ry][0], cnt[ry][1]);
 
         // 2. 确定 rx 相对 ry 的偏移量
         int d_rx = dist[x] ^ dist[y] ^ 1;
@@ -46,7 +46,7 @@ bool unite(int x, int y)
         }
 
         // 4. 加上合并后的新贡献
-        ans += min(cnt[ry][0], cnt[ry][1]);
+        dis += min(cnt[ry][0], cnt[ry][1]);
         return true;
     }
 
@@ -77,7 +77,7 @@ int main()
         if (!ok) {
             cout << "-1\n";
         } else
-            cout << ans << '\n';
+            cout << dis << '\n';
     }
     return 0;
 }

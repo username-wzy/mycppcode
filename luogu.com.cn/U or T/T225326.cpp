@@ -6,7 +6,7 @@ typedef long long ll;
 constexpr int N = 1000005;
 
 vector<pair<int, int>> g[N];
-int c[N], ans = 0;
+int c[N], dis = 0;
 
 int dfs(int u, int fa)
 {
@@ -23,7 +23,7 @@ int dfs(int u, int fa)
             d2 = d;
         }
     }
-    ans = max(ans, d1 + d2);
+    dis = max(dis, d1 + d2);
     return dist;
 }
 
@@ -41,6 +41,6 @@ int main()
         g[v].push_back({ u, w });
     }
     dfs(1, -1);
-    cout << ans;
+    cout << dis;
     return 0;
 }

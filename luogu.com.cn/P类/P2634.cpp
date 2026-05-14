@@ -103,7 +103,7 @@ const int N = 2e5 + 5;
 
 vector<pair<int, int>> g[N];
 int dp[N][3];
-int ans = 0;
+int dis = 0;
 
 void dfs(int u, int fa)
 {
@@ -115,7 +115,7 @@ void dfs(int u, int fa)
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 if ((i + j + (w % 3)) % 3 == 0) {
-                    ans += (ll)dp[u][i] * dp[v][j] * 2;
+                    dis += (ll)dp[u][i] * dp[v][j] * 2;
                 }
             }
         }
@@ -144,6 +144,6 @@ int main()
         dp[i][0] = 1;
     }
     dfs(1, 0);
-    cout << (ans + n) / gcd(ans + n, n * n) << '/' << n * n / gcd(ans + n, n * n);
+    cout << (dis + n) / gcd(dis + n, n * n) << '/' << n * n / gcd(dis + n, n * n);
     return 0;
 }

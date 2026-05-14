@@ -2,7 +2,7 @@
 #define ll long long
 
 using namespace std;
-int n, ans, m, trie[205][26], idx = 0;
+int n, dis, m, trie[205][26], idx = 0;
 string s;
 bool dp[1100000], cnt[205];
 
@@ -33,11 +33,11 @@ void solve()
     // }
     while (m--) {
         memset(dp, 0, sizeof dp);
-        ans = 0;
+        dis = 0;
         dp[0] = 1;
         cin >> s;
         s = ' ' + s;
-        for (int i = 1; i < int(s.size()) && i <= ans + 10; i++) {
+        for (int i = 1; i < int(s.size()) && i <= dis + 10; i++) {
             int j = i, p = 0;
             while (j && i - j + 1 <= 10) {
                 int x = s[j] - 'a';
@@ -49,12 +49,12 @@ void solve()
                 p = trie[p][x];
                 if (cnt[p] && dp[j - 1]) {
                     dp[i] = 1;
-                    ans = i;
+                    dis = i;
                 }
                 j--;
             }
         }
-        cout << ans << '\n';
+        cout << dis << '\n';
     }
 }
 

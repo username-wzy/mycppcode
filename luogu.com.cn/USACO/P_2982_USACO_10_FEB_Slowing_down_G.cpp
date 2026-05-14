@@ -6,7 +6,7 @@ using namespace std;
 constexpr int N = 1e5 + 5;
 
 vector<int> g[N];
-int ans = 0;
+int dis = 0;
 
 int bfs(int x, int target)
 {

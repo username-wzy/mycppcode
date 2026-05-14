@@ -5,12 +5,12 @@ typedef long long ll;
 
 double l[25];
 int n;
-int ans = 0;
+int dis = 0;
 
 void dfs(int i, int current_ans, double k)
 {
     if (i > n) {
-        ans = max(ans, current_ans);
+        dis = max(dis, current_ans);
         return;
     }
 
@@ -36,7 +36,7 @@ int main()
     }
 
     dfs(1, 0, 0.5);
-    cout << ans;
+    cout << dis;
 
     return 0;
 }
