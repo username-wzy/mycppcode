@@ -30,3 +30,4 @@ venv/
 ahacode/
 # AI Context
 .cobridge
+.clang-format
