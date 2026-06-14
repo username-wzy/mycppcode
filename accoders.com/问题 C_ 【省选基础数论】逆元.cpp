@@ -6,7 +6,7 @@ typedef long long ll;
 const int MOD = 9901;
 
 // 快速幂计算 (a^b) % p
-ll qpow(ll a, ll b)
+ll quick_pow(ll a, ll b)
 {
     ll res = 1;
     a %= MOD;
@@ -26,7 +26,7 @@ ll C(ll m, ll n)
         fenzi = fenzi * (m - i) % MOD;
         fenmu = fenmu * (i + 1) % MOD;
     }
-    return fenzi * qpow(fenmu, MOD - 2) % MOD;
+    return fenzi * quick_pow(fenmu, MOD - 2) % MOD;
 }
 
 ll lucas(ll m, ll n)

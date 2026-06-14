@@ -2,22 +2,22 @@
 #define debug(x) cerr << #x << " = " << x << '\n';
 #define IAK std::ios::sync_with_stdio(false);
 #define IOI std::cin.tie(nullptr)
-
 using namespace std;
 using ll = long long;
 using ull = unsigned long long;
 using pii = pair<int, int>;
 using pll = pair<long, long>;
 
-/**
- * @File: 1
- * @Author: wzy
- * @Date: 2026-06-06 21:45
- */
-
 void solve()
 {
-    
+    int n, m;
+    cin >> n >> m;
+    int cnt = 0;
+    while (m) {
+        m = n % m;
+        cnt++;
+    }
+    cout << cnt << '\n';
 }
 
 int main()

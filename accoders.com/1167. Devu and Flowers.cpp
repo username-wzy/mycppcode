@@ -21,7 +21,7 @@ typedef long long ll;
 const int MOD = 1e9 + 7;
 ll inv[25]; // i在mod MOD意义下的“倒数” 也就是模逆元
 
-ll qpow(ll a, ll b)
+ll quick_pow(ll a, ll b)
 {
     ll res = 1;
     while (b) {
@@ -36,7 +36,7 @@ ll qpow(ll a, ll b)
 void init()
 {
     for (int i = 1; i <= 20; i++)
-        inv[i] = qpow(i, MOD - 2);
+        inv[i] = quick_pow(i, MOD - 2);
 }
 
 ll cnk(ll n, int k)

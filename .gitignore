@@ -31,3 +31,5 @@ ahacode/
 # AI Context
 .cobridge
 .clang-format
+
+test/

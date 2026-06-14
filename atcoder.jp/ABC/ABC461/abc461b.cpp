@@ -10,14 +10,28 @@ using pii = pair<int, int>;
 using pll = pair<long, long>;
 
 /**
- * @File: 17
+ * @File: 12
  * @Author: wzy
- * @Date: 2026-06-07 15:36
+ * @Date: 2026-06-06 20:07
  */
 
 void solve()
 {
-    
+    int n;
+    cin >> n;
+    vector<int> a(n + 1);
+    for (int i = 1; i <= n; i++)
+        cin >> a[i];
+    vector<int> b(n + 1);
+    for (int i = 1; i <= n; i++)
+        cin >> b[i];
+    for (int i = 1; i <= n; i++) {
+        if (i != b[a[i]]) {
+            cout << "No";
+            return;
+        }
+    }
+    cout << "Yes";
 }
 
 int main()

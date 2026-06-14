@@ -5,7 +5,7 @@ typedef long long ll;
 
 const ll mod = 10000 + 7;
 
-ll qpow(ll a, ll b)
+ll quick_pow(ll a, ll b)
 {
     a %= mod;
     ll res = 1;
@@ -46,6 +46,6 @@ int main()
     cin >> a >> b >> k >> n >> m;
     // C_k^n \cdot a^n \cdot b^m \cdot x^n \cdot y^m
 
-    cout << C(k, n) * qpow(a, n) % mod * qpow(b, m) % mod << '\n';
+    cout << C(k, n) * quick_pow(a, n) % mod * quick_pow(b, m) % mod << '\n';
     return 0;
 }

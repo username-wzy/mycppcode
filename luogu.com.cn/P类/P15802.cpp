@@ -11,7 +11,7 @@ using pll = pair<long, long>;
 
 int mod = 1e9;
 
-ll qpow(ll base, ll exp)
+ll quick_pow(ll base, ll exp)
 {
     ll res = 1;
     base %= mod;
@@ -30,9 +30,9 @@ void solve()
     cin >> n;
     if (n < 3)
         cout << n;
-    elif (n % 3 == 0) cout << qpow(3, n / 3);
-    elif (n % 3 == 1) cout << qpow(3, n / 3 - 1) * 4 % mod;
-    else cout << qpow(3, n / 3) * 2 % mod;
+    elif (n % 3 == 0) cout << quick_pow(3, n / 3);
+    elif (n % 3 == 1) cout << quick_pow(3, n / 3 - 1) * 4 % mod;
+    else cout << quick_pow(3, n / 3) * 2 % mod;
     cout << '\n';
 }
 

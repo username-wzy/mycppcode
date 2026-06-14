@@ -1,31 +1,32 @@
 {
-	"Empty C++ Program": {
+	"C++ Standard Template": {
 		"prefix": "code",
 		"body": [
-			"#include<bits/stdc++.h>",
-			"#define ll long long",
-			"",
+			"#include <bits/stdc++.h>",
+			"#define debug(x) cerr << #x << \" = \" << x << '\\n';",
+			"#define IAK std::ios::sync_with_stdio(false);",
+			"#define IOI std::cin.tie(nullptr)",
 			"using namespace std;",
+			"using ll = long long;",
+			"using ull = unsigned long long;",
+			"using pii = pair<int, int>;",
+			"using pll = pair<long, long>;",
 			"",
-			"void solve() {",
-			"\t$0",
+			"void solve()",
+			"{",
+			"    $0",
 			"}",
 			"",
-			"int main() {",
-			"\tios::sync_with_stdio(false);",
-			"\tcin.tie(0), cout.tie(0);",
-			"",
-			"\t// freopen(\"xxx.in\", \"r\", stdin);",
-			"\t// freopen(\"xxx.out\", \"w\", stdout);",
-			"",
-			"\tint T = 1; // cin >> T;",
-			"\twhile(T--) {",
-			"\t\tsolve();",
-			"\t}",
-			"",
-			"\treturn 0;",
-			"}"
+			"int main()",
+			"{",
+			"    IAK IOI;",
+			"    int T = 1;",
+			"    // cin >> T;",
+			"    while (T--)",
+			"        solve();",
+			"    return 0;",
+			"}",
 		],
-		"description": "插入一个空的C++程序模板，包含常用头文件和主函数结构"
+		"description": "基础 C++ 竞赛模板"
 	}
 }

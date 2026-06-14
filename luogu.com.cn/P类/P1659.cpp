@@ -8,7 +8,7 @@ const int MOD = 19930726;
 
 int d[N];
 
-ll qpow(ll a, ll b)
+ll quick_pow(ll a, ll b)
 {
     ll sum = 1;
     while (b) {
@@ -76,7 +76,7 @@ int main()
     }
     ll sum = 1;
     for (auto i : mp) {
-        sum = sum * qpow(i.first, min(i.second, k)) % MOD;
+        sum = sum * quick_pow(i.first, min(i.second, k)) % MOD;
         k -= min(i.second, k);
         if (k == 0) {
             cout << sum;
